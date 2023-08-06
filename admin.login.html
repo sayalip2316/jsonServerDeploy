@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Logint</title>
+</head>
+<body>
+    <h1>Admin Login</h1>
+    <form id="loginForm">
+        
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        
+     
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+     
+      
+          <button type="submit">Login</button>
+      
+      </form>
+      <div id="errorMessage"></div>
+      <div id="loader">Loading...</div>
+      <p>
+        {
+            "email": "eve.holt@reqres.in",
+            "password": "cityslicka"
+        }
+      </p>
+</body>
+</html>
+<script>
+    const emailEl=document.getElementById("email")
+    const passwordEl=document.getElementById("password")
+    const loginFormEl=document.getElementById("loginForm")
+    const errorMessageEl=document.getElementById("errorMessage")
+    const loaderEl=document.getElementById("loader")
+
+    errorMessageEl.textContent="";
+
+
+    loginFormEl.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        const payload = {
+            email: emailEl.value,
+            password: passwordEl.value
+        };
+        fetch('https://reqres.in/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+        })
+        .then(response => response.json())
+        .then(data => {
+            loaderEl.style.display = "none";
+            if (data.token !== null) {
+                localStorage.setItem("token", JSON.stringify(data.token));
+                alert("Login successful");
+                window.location.href="dataPage.html"
+            } else {
+                errorMessageEl.textContent = "Invalid credentials. Please try again.";
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+
+</script>

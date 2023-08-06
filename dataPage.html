@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Page</title>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="reports.html">Reports</a></li>
+        </ul>
+      </nav>
+      <div class="content">
+        <h2>User Data</h2>
+    
+        <div class="filters">
+          <label for="sort">Sort by Age:</label>
+          <select id="sort">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+          <label for="filter">Filter by Profession:</label>
+          <select id="filter">
+            <option value="">All</option>
+            <option value="FSD">FSD</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="Student">Student</option>
+          </select>
+          <label for="search">Search by Name:</label>
+          <input type="text" id="search">
+        </div>
+    
+        <div id="userData" class="user-data"></div>
+    
+        <div id="pagination" class="pagination"></div>
+      </div>
+</body>
+</html>
+<script>
+   const userDataEl=document.getElementById("userData") 
+   const sortSelect=document.getElementById("sort") 
+   const filterSelect=document.getElementById("filter") 
+   const searchIn=document.getElementById("search") 
+   const pagination=document.getElementById("pagination") 
+
+   let currentpage=1;
+   const usersPerPage=5;
+   let totalusers=0;
+   let userData=[];
+   let filteredData=[];
+
+   // Check if token is present
+   const token=localStorage.getItem("token");
+   //console.log(token)
+   if(!token){
+    window.location.href="admin.login.html"
+   }
+
+   function fetchUserData(){
+    fetch(`https://mock-server-app-51nz.onrender.com/users`)
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data)
+    })
+    .catch(error=>{
+        console.log("Data fetch error:",error)
+    })
+   }
+   fetchUserData();
+
+   
+</script>

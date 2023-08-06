@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Masaiverse Event</h1>
+    <div>
+        <button id="adminBtn">Admin section</button>
+        <button id="userBtn">User Section</button>
+    </div>
+</body>
+</html>
+<script>
+    const adminBtn=document.getElementById("adminBtn")
+    const userBtn=document.getElementById("userBtn")
+
+    adminBtn.addEventListener("click",()=>{
+        window.location.href="admin.html"
+    })
+    userBtn.addEventListener("click",()=>{
+        window.location.href="user.login.html"
+    })
+</script>
