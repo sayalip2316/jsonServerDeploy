@@ -1,3 +1,84 @@
 {
-    "users": []
+    "users": [
+      {
+        "name": "Nayra",
+        "age": "15",
+        "place": "kop",
+        "batch": "WEB-13",
+        "profession": "Backend",
+        "id": 1
+    },
+    {
+        "name": "John",
+        "age": "25",
+        "place": "New York",
+        "batch": "WEB-14",
+        "profession": "Frontend",
+        "id": 2
+    },
+    {
+        "name": "Alice",
+        "age": "30",
+        "place": "London",
+        "batch": "WEB-15",
+        "profession": "FSD",
+        "id": 3
+    },
+    {
+        "name": "Bob",
+        "age": "22",
+        "place": "San Francisco",
+        "batch": "WEB-13",
+        "profession": "Frontend",
+        "id": 4
+    },
+    {
+        "name": "Eva",
+        "age": "27",
+        "place": "Paris",
+        "batch": "WEB-14",
+        "profession": "FSD",
+        "id": 5
+    },
+    {
+        "name": "Mike",
+        "age": "18",
+        "place": "Sydney",
+        "batch": "WEB-15",
+        "profession": "Student",
+        "id": 6
+    },
+    {
+        "name": "Emma",
+        "age": "28",
+        "place": "Berlin",
+        "batch": "WEB-14",
+        "profession": "Backend",
+        "id": 7
+    },
+    {
+        "name": "Alex",
+        "age": "35",
+        "place": "Tokyo",
+        "batch": "WEB-13",
+        "profession": "Backend",
+        "id": 8
+    },
+    {
+        "name": "Olivia",
+        "age": "19",
+        "place": "Rome",
+        "batch": "WEB-15",
+        "profession": "Student",
+        "id": 9
+    },
+    {
+        "name": "Liam",
+        "age": "23",
+        "place": "Toronto",
+        "batch": "WEB-13",
+        "profession": "Frontend",
+        "id": 10
+    }
+    ]
   }
